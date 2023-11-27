@@ -12,16 +12,18 @@ namespace Oper4sToolsAgain
 	internal class AppSettings
 	{
 		private string baseJson = File.ReadAllText("appsettings.json");
-		private string defaultSettings = "[{ \"debugMode\": false, \"timeInterval\": 30}]";
+		private string defaultSettings = "[{ \"debugMode\": false, \"timeInterval\": 30, \"commandPromptGUIFilePath\": \"defaultFilePath\"}]";
 		private dynamic editJson;
 		private bool debugMode;
 		private int timeInterval;
+		private string commandPromptGUIFilePath;
 		public AppSettings()
 		{
 			if(!File.Exists("appsettings.json")) firstRun();
 			editJson = JsonConvert.DeserializeObject(baseJson);
 			debugMode = editJson["Settings"][0]["debugMode"];
 			timeInterval = editJson["Settings"][0]["timeInterval"];
+			commandPromptGUIFilePath = editJson["Settings"][0]["commandPromptGUIFilePath"];
 			if (debugMode) flipDebugMode();
 		}
 		private void firstRun()
@@ -30,6 +32,13 @@ namespace Oper4sToolsAgain
 			jsonObject["Settings"] = JArray.Parse(defaultSettings);
 			string makeNew = JsonConvert.SerializeObject(jsonObject, Formatting.Indented);
 			File.WriteAllText("appsettings.json", makeNew);
+		}
+		public string getCommandPromptGUIFilePath() { return commandPromptGUIFilePath; }
+		public void setCommandPromptGUIFilePath(string commandPromptGUIFilePath) 
+		{ 
+			this.commandPromptGUIFilePath = commandPromptGUIFilePath;
+			editJson["Settings"][0]["commandPromptGUIFilePath"] = commandPromptGUIFilePath;
+			writeToJson(); 
 		}
 		public bool isDebugMode() {  return debugMode; }
 		public int getTimeInterval() {  return timeInterval; }

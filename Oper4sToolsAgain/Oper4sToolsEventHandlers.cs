@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Oper4sToolsAgain.CommandPromptGUI;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -41,6 +42,11 @@ namespace Oper4sToolsAgain
 		public static void tryPostureCheckMenu(object sender, EventArgs e)
 		{
 			Oper4sToolsFunctions.playReminder(null);
+		}
+
+		public static void openCommandPromptGUI(object? sender, EventArgs e)
+		{
+			Oper4sTools.commandPromptGUIController.openCommandPromptGUIModel();
 		}
 
 		public static void openDebugConsole(object sender, EventArgs e)

@@ -80,6 +80,7 @@ namespace Oper4sToolsAgain
 			contextMenuStrip.Items.Add("Home", null, Oper4sToolsEventHandlers.homeContextMenu);
 			contextMenuStrip.Items.Add("Posture Check", Oper4sImageTools.getImage("skill2"), Oper4sToolsEventHandlers.postureCheckMenu);
 			contextMenuStrip.Items.Add("Try Posture Check Sound", Oper4sImageTools.getImage("skill3"), Oper4sToolsEventHandlers.tryPostureCheckMenu);
+			contextMenuStrip.Items.Add("Open Command Prompt GUI", Oper4sImageTools.getImage("skill4"), Oper4sToolsEventHandlers.openCommandPromptGUI);
 			contextMenuStrip.Items.Add("Open Debug Console at next Launch", null, Oper4sToolsEventHandlers.openDebugConsole);
 			contextMenuStrip.Items.Add("Exit", null, Oper4sToolsEventHandlers.exitToolStripMenuItem);
 
