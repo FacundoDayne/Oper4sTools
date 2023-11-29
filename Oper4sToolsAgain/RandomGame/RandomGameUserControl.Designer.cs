@@ -28,7 +28,6 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RandomGameUserControl));
 			gameLayoutPanel = new TableLayoutPanel();
 			pictureBox1 = new PictureBox();
 			logoPictureBox = new PictureBox();
@@ -52,7 +51,7 @@
 			gameLayoutPanel.Name = "gameLayoutPanel";
 			gameLayoutPanel.RowCount = 1;
 			gameLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 150F));
-			gameLayoutPanel.Size = new Size(509, 150);
+			gameLayoutPanel.Size = new Size(506, 150);
 			gameLayoutPanel.TabIndex = 0;
 			// 
 			// pictureBox1
@@ -63,7 +62,7 @@
 			pictureBox1.Location = new Point(10, 10);
 			pictureBox1.Margin = new Padding(10);
 			pictureBox1.Name = "pictureBox1";
-			pictureBox1.Size = new Size(149, 130);
+			pictureBox1.Size = new Size(148, 130);
 			pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
 			pictureBox1.TabIndex = 2;
 			pictureBox1.TabStop = false;
@@ -82,6 +81,7 @@
 			// 
 			AutoScaleDimensions = new SizeF(7F, 15F);
 			AutoScaleMode = AutoScaleMode.Font;
+			AutoScroll = true;
 			BackColor = Color.Black;
 			Controls.Add(logoPictureBox);
 			Controls.Add(gameLayoutPanel);

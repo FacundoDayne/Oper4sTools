@@ -16,6 +16,7 @@ namespace Oper4sToolsAgain.RandomGame
 		public RandomGameUserControl()
 		{
 			InitializeComponent();
+			populateTable();
 		}
 
 		void populateTable()

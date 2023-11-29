@@ -19,8 +19,7 @@ namespace Oper4sToolsAgain.RandomGame.Custom
 			this.game = game;
 			InitializeComponent();
 			this.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-			Icon icon = Icon.ExtractAssociatedIcon(game.filePath);
-			this.Image = icon.ToBitmap();
+			this.Image = RaymondSolution.getImage(game.filePath);
 			this.Size = new Size(164, 144);
 			this.SizeMode = PictureBoxSizeMode.Zoom;
 			this.Name = game.name;
