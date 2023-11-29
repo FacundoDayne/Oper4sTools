@@ -19,10 +19,7 @@ namespace Oper4sToolsAgain
 				Oper4sTools.thisForm.WindowState = FormWindowState.Normal;
 			}
 			else if (e.Button == MouseButtons.Right) Oper4sTools.contextMenuStrip.Show(Cursor.Position);
-			else if (e.Button == MouseButtons.Middle)
-			{
-				miscTools.closeProgram();
-			}
+			else if (e.Button == MouseButtons.Middle) miscTools.closeProgram();
 
 
 		}

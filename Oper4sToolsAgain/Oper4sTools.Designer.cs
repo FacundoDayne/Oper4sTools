@@ -1,4 +1,6 @@
-﻿namespace Oper4sToolsAgain
+﻿using System.Runtime.CompilerServices;
+
+namespace Oper4sToolsAgain
 {
 	partial class Oper4sTools
 	{
@@ -28,6 +30,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Oper4sTools));
 			SuspendLayout();
 			// 
 			// Oper4sTools
@@ -35,9 +38,9 @@
 			AutoScaleDimensions = new SizeF(7F, 15F);
 			AutoScaleMode = AutoScaleMode.Font;
 			ClientSize = new Size(800, 450);
-			
+			Icon = (Icon)resources.GetObject("$this.Icon");
 			Name = "Oper4sTools";
-			Text = "Form1";
+			Text = "Oper4sTools";
 			ResumeLayout(false);
 		}
 
@@ -58,5 +61,12 @@
 			ShowInTaskbar = false; // Hide the form from the taskbar
 			base.OnFormClosing(e);
 		}
+
+		protected override void OnSizeChanged(EventArgs e)
+		{
+			ShowInTaskbar = true;
+			base.OnAutoSizeChanged(e);
+		}
+
 	}
 }

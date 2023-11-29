@@ -29,11 +29,13 @@
 		private void InitializeComponent()
 		{
 			gameLayoutPanel = new TableLayoutPanel();
-			pictureBox1 = new PictureBox();
-			logoPictureBox = new PictureBox();
-			gameLayoutPanel.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-			((System.ComponentModel.ISupportInitialize)logoPictureBox).BeginInit();
+			panel1 = new Panel();
+			button2 = new Button();
+			button1 = new Button();
+			gameNameLabel = new Label();
+			label2 = new Label();
+			label1 = new Label();
+			panel1.SuspendLayout();
 			SuspendLayout();
 			// 
 			// gameLayoutPanel
@@ -45,37 +47,80 @@
 			gameLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.33333F));
 			gameLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
 			gameLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
-			gameLayoutPanel.Controls.Add(pictureBox1, 0, 0);
 			gameLayoutPanel.Location = new Point(257, 23);
 			gameLayoutPanel.Margin = new Padding(3, 3, 3, 150);
 			gameLayoutPanel.Name = "gameLayoutPanel";
 			gameLayoutPanel.RowCount = 1;
 			gameLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 150F));
-			gameLayoutPanel.Size = new Size(506, 150);
+			gameLayoutPanel.Size = new Size(474, 150);
 			gameLayoutPanel.TabIndex = 0;
 			// 
-			// pictureBox1
+			// panel1
 			// 
-			pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-			pictureBox1.BackColor = Color.FromArgb(0, 43, 54);
-			pictureBox1.Image = Properties.Resources.haxxor_icon;
-			pictureBox1.Location = new Point(10, 10);
-			pictureBox1.Margin = new Padding(10);
-			pictureBox1.Name = "pictureBox1";
-			pictureBox1.Size = new Size(148, 130);
-			pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-			pictureBox1.TabIndex = 2;
-			pictureBox1.TabStop = false;
+			panel1.AutoScroll = true;
+			panel1.Controls.Add(button2);
+			panel1.Controls.Add(button1);
+			panel1.Controls.Add(gameNameLabel);
+			panel1.Controls.Add(label2);
+			panel1.Controls.Add(label1);
+			panel1.Dock = DockStyle.Fill;
+			panel1.Location = new Point(0, 0);
+			panel1.MaximumSize = new Size(240, 450);
+			panel1.MinimumSize = new Size(240, 450);
+			panel1.Name = "panel1";
+			panel1.Size = new Size(240, 450);
+			panel1.TabIndex = 1;
 			// 
-			// logoPictureBox
+			// button2
 			// 
-			logoPictureBox.Image = Properties.Resources.haxxor_icon;
-			logoPictureBox.Location = new Point(27, 23);
-			logoPictureBox.Name = "logoPictureBox";
-			logoPictureBox.Size = new Size(140, 137);
-			logoPictureBox.SizeMode = PictureBoxSizeMode.Zoom;
-			logoPictureBox.TabIndex = 1;
-			logoPictureBox.TabStop = false;
+			button2.Location = new Point(80, 316);
+			button2.Name = "button2";
+			button2.Size = new Size(75, 23);
+			button2.TabIndex = 5;
+			button2.Text = "button2";
+			button2.UseVisualStyleBackColor = true;
+			// 
+			// button1
+			// 
+			button1.Location = new Point(80, 263);
+			button1.Name = "button1";
+			button1.Size = new Size(75, 23);
+			button1.TabIndex = 4;
+			button1.Text = "button1";
+			button1.UseVisualStyleBackColor = true;
+			// 
+			// gameNameLabel
+			// 
+			gameNameLabel.AutoSize = true;
+			gameNameLabel.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+			gameNameLabel.ForeColor = Color.White;
+			gameNameLabel.Location = new Point(39, 131);
+			gameNameLabel.MaximumSize = new Size(162, 0);
+			gameNameLabel.Name = "gameNameLabel";
+			gameNameLabel.Size = new Size(0, 17);
+			gameNameLabel.TabIndex = 3;
+			// 
+			// label2
+			// 
+			label2.AutoSize = true;
+			label2.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+			label2.ForeColor = Color.White;
+			label2.Location = new Point(13, 83);
+			label2.Name = "label2";
+			label2.Size = new Size(78, 32);
+			label2.TabIndex = 1;
+			label2.Text = "Name";
+			// 
+			// label1
+			// 
+			label1.AutoSize = true;
+			label1.Font = new Font("Segoe UI", 18F, FontStyle.Regular, GraphicsUnit.Point, 0);
+			label1.ForeColor = Color.White;
+			label1.Location = new Point(52, 23);
+			label1.Name = "label1";
+			label1.Size = new Size(146, 32);
+			label1.TabIndex = 0;
+			label1.Text = "Game Menu";
 			// 
 			// RandomGameUserControl
 			// 
@@ -83,13 +128,12 @@
 			AutoScaleMode = AutoScaleMode.Font;
 			AutoScroll = true;
 			BackColor = Color.Black;
-			Controls.Add(logoPictureBox);
+			Controls.Add(panel1);
 			Controls.Add(gameLayoutPanel);
 			Name = "RandomGameUserControl";
 			Size = new Size(800, 450);
-			gameLayoutPanel.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-			((System.ComponentModel.ISupportInitialize)logoPictureBox).EndInit();
+			panel1.ResumeLayout(false);
+			panel1.PerformLayout();
 			ResumeLayout(false);
 			PerformLayout();
 		}
@@ -97,7 +141,11 @@
 		#endregion
 
 		private TableLayoutPanel gameLayoutPanel;
-		private PictureBox logoPictureBox;
-		private PictureBox pictureBox1;
+		private Panel panel1;
+		private Label label1;
+		private Label gameNameLabel;
+		private Label label2;
+		private Button button2;
+		private Button button1;
 	}
 }

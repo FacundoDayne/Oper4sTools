@@ -14,6 +14,7 @@ namespace Oper4sToolsAgain.RandomGame.Custom
 	public partial class gamePicture : PictureBox
 	{
 		Game game;
+		
 		public gamePicture(Game game)
 		{
 			this.game = game;
@@ -29,12 +30,16 @@ namespace Oper4sToolsAgain.RandomGame.Custom
 			this.MouseDown += GamePicture_MouseDown;
 		}
 
+		public Game getGame() { return game; }
+
 		private void GamePicture_MouseDown(object? sender, MouseEventArgs e)
 		{
 			PictureBox this_PictureBox = sender as PictureBox;
 			this_PictureBox.MouseUp += GamePicture_MouseUp;
 			this_PictureBox.MouseDown -= GamePicture_MouseDown;
 			if (e.Button == MouseButtons.Left) this_PictureBox.BackColor = Color.FromArgb(34, 49, 63);
+			RandomGameUserControl.selected = game;
+			RandomGameUserControl.randomInstance.raiseGameSelected();
 		}
 
 		private void GamePicture_MouseUp(object? sender, MouseEventArgs e)
