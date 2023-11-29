@@ -48,22 +48,7 @@ namespace Oper4sToolsAgain
 		}
 	}
 
-	public class UserControlMethods
-	{
-		public static void maskChange(UserControl uc, UserControl _current)
-		{
-			Oper4sTools.thisForm.Controls.Remove(_current);
-			_current = uc;
-			Oper4sTools.thisForm.Controls.Add(_current);
-			_current.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-			| System.Windows.Forms.AnchorStyles.Left)
-			| System.Windows.Forms.AnchorStyles.Right)));
-			_current.Location = new System.Drawing.Point(0, 0);
-			_current.Name = "_current";
-			_current.Size = new System.Drawing.Size(800, 450);
-			_current.TabIndex = 0;
-		}	
-	}
+	
 
 	public class TrayIcon
 	{
@@ -80,7 +65,8 @@ namespace Oper4sToolsAgain
 			contextMenuStrip.Items.Add("Home", null, Oper4sToolsEventHandlers.homeContextMenu);
 			contextMenuStrip.Items.Add("Posture Check", Oper4sImageTools.getImage("skill2"), Oper4sToolsEventHandlers.postureCheckMenu);
 			contextMenuStrip.Items.Add("Try Posture Check Sound", Oper4sImageTools.getImage("skill3"), Oper4sToolsEventHandlers.tryPostureCheckMenu);
-			contextMenuStrip.Items.Add("Open Command Prompt GUI", Oper4sImageTools.getImage("skill4"), Oper4sToolsEventHandlers.openCommandPromptGUI);
+			contextMenuStrip.Items.Add("Random Game Menu", Oper4sImageTools.getImage("skill4"), Oper4sToolsEventHandlers.openRandomGameMenu);
+			contextMenuStrip.Items.Add("Open Command Prompt GUI", Oper4sImageTools.getImage("skill5"), Oper4sToolsEventHandlers.openCommandPromptGUI);
 			contextMenuStrip.Items.Add("Open Debug Console at next Launch", null, Oper4sToolsEventHandlers.openDebugConsole);
 			contextMenuStrip.Items.Add("Exit", null, Oper4sToolsEventHandlers.exitToolStripMenuItem);
 

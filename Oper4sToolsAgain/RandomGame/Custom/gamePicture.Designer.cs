@@ -1,6 +1,6 @@
-﻿namespace Oper4sToolsAgain.CustomUserControls
+﻿namespace Oper4sToolsAgain.RandomGame.Custom
 {
-	partial class baseUserControl
+	partial class gamePicture
 	{
 		/// <summary> 
 		/// Required designer variable.
@@ -28,16 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			SuspendLayout();
-			// 
-			// baseUserControl
-			// 
-			AutoScaleDimensions = new SizeF(7F, 15F);
-			AutoScaleMode = AutoScaleMode.Font;
-			BackColor = Color.Gray;
-			Name = "baseUserControl";
-			Size = new Size(800, 450);
-			ResumeLayout(false);
+			components = new System.ComponentModel.Container();
 		}
 
 		#endregion

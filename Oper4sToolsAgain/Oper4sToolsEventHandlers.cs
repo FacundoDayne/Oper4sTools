@@ -28,20 +28,27 @@ namespace Oper4sToolsAgain
 		}
 		public static void homeContextMenu(object sender, EventArgs e)
 		{
-			UserControlMethods.maskChange(new UserControl(), new UserControl());
+			Oper4sTools.thisForm.maskChange(new UserControl());
 			Oper4sTools.thisForm.Show();
 			Oper4sTools.thisForm.WindowState = FormWindowState.Normal;
 		}
 
 		public static void postureCheckMenu(object sender, EventArgs e)
 		{
-			UserControlMethods.maskChange(new UserControl(), new UserControl());
+			Oper4sTools.thisForm.maskChange(new UserControl());
 			Oper4sTools.thisForm.Show();
 			Oper4sTools.thisForm.WindowState = FormWindowState.Normal;
 		}
 		public static void tryPostureCheckMenu(object sender, EventArgs e)
 		{
 			Oper4sToolsFunctions.playReminder(null);
+		}
+
+		public static void openRandomGameMenu(object? sender, EventArgs e)
+		{
+			Oper4sTools.thisForm.maskChange(new RandomGame.RandomGameUserControl());
+			Oper4sTools.thisForm.Show();
+			Oper4sTools.thisForm.WindowState = FormWindowState.Normal;
 		}
 
 		public static void openCommandPromptGUI(object? sender, EventArgs e)
