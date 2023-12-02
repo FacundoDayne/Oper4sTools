@@ -30,8 +30,9 @@
 		{
 			gameLayoutPanel = new TableLayoutPanel();
 			panel1 = new Panel();
-			button2 = new Button();
-			button1 = new Button();
+			btnPlay = new Button();
+			btnRemove = new Button();
+			btnRandom = new Button();
 			gameNameLabel = new Label();
 			label2 = new Label();
 			label1 = new Label();
@@ -52,14 +53,15 @@
 			gameLayoutPanel.Name = "gameLayoutPanel";
 			gameLayoutPanel.RowCount = 1;
 			gameLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 150F));
-			gameLayoutPanel.Size = new Size(474, 150);
+			gameLayoutPanel.Size = new Size(437, 150);
 			gameLayoutPanel.TabIndex = 0;
 			// 
 			// panel1
 			// 
 			panel1.AutoScroll = true;
-			panel1.Controls.Add(button2);
-			panel1.Controls.Add(button1);
+			panel1.Controls.Add(btnPlay);
+			panel1.Controls.Add(btnRemove);
+			panel1.Controls.Add(btnRandom);
 			panel1.Controls.Add(gameNameLabel);
 			panel1.Controls.Add(label2);
 			panel1.Controls.Add(label1);
@@ -71,23 +73,40 @@
 			panel1.Size = new Size(240, 450);
 			panel1.TabIndex = 1;
 			// 
-			// button2
+			// btnPlay
 			// 
-			button2.Location = new Point(80, 316);
-			button2.Name = "button2";
-			button2.Size = new Size(75, 23);
-			button2.TabIndex = 5;
-			button2.Text = "button2";
-			button2.UseVisualStyleBackColor = true;
+			btnPlay.BackColor = Color.DimGray;
+			btnPlay.ForeColor = Color.White;
+			btnPlay.Location = new Point(19, 237);
+			btnPlay.Name = "btnPlay";
+			btnPlay.Size = new Size(94, 49);
+			btnPlay.TabIndex = 6;
+			btnPlay.Text = "Play Game";
+			btnPlay.UseVisualStyleBackColor = false;
+			btnPlay.Click += playSelected;
 			// 
-			// button1
+			// btnRemove
 			// 
-			button1.Location = new Point(80, 263);
-			button1.Name = "button1";
-			button1.Size = new Size(75, 23);
-			button1.TabIndex = 4;
-			button1.Text = "button1";
-			button1.UseVisualStyleBackColor = true;
+			btnRemove.BackColor = Color.DimGray;
+			btnRemove.ForeColor = Color.White;
+			btnRemove.Location = new Point(129, 237);
+			btnRemove.Name = "btnRemove";
+			btnRemove.Size = new Size(94, 49);
+			btnRemove.TabIndex = 5;
+			btnRemove.Text = "Remove Game";
+			btnRemove.UseVisualStyleBackColor = false;
+			btnRemove.Click += btnRemove_Click;
+			// 
+			// btnRandom
+			// 
+			btnRandom.BackColor = Color.DimGray;
+			btnRandom.ForeColor = Color.White;
+			btnRandom.Location = new Point(72, 323);
+			btnRandom.Name = "btnRandom";
+			btnRandom.Size = new Size(94, 49);
+			btnRandom.TabIndex = 4;
+			btnRandom.Text = "Play Random Game";
+			btnRandom.UseVisualStyleBackColor = false;
 			// 
 			// gameNameLabel
 			// 
@@ -145,7 +164,8 @@
 		private Label label1;
 		private Label gameNameLabel;
 		private Label label2;
-		private Button button2;
-		private Button button1;
+		private Button btnRemove;
+		private Button btnRandom;
+		private Button btnPlay;
 	}
 }

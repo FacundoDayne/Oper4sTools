@@ -17,7 +17,8 @@ namespace Oper4sToolsAgain
 			if (Program.appSettings.isDebugMode()) MessageBox.Show("The next launch of the application will run in Debug Mode", "Oper4sTools Debug Mode");
 			Oper4sTools.timer.Dispose();
 			Oper4sTools.notifyIcon.Dispose();
-			System.Windows.Forms.Application.Exit();
+			Oper4sTools.thisForm.Dispose();
+			Application.Exit();
 		}
 	}
 
@@ -30,9 +31,23 @@ namespace Oper4sToolsAgain
 			Console.WriteLine("Timer starts");
 			Oper4sTools.timer = new System.Threading.Timer(playReminder, null, time, time);
 		}
-		public static void playGreeting() { player = new SoundPlayer(SoundController.getSound("0")); player.PlaySync(); }
+		public static void playGreeting() 
+		{
+			if (!Program.appSettings.isDebugMode())
+			{
+				player = new SoundPlayer(SoundController.getSound("0")); 
+				player.PlaySync();
+			}
+		}
 
-		public static void playFarewell () { player = new SoundPlayer(SoundController.getSound("1")); player.PlaySync(); }
+		public static void playFarewell () 
+		{
+			if (!Program.appSettings.isDebugMode())
+			{ 
+				player = new SoundPlayer(SoundController.getSound("1")); 
+				player.PlaySync();
+			}
+		}
 		public static void playReminder(object state)
 		{
 			try

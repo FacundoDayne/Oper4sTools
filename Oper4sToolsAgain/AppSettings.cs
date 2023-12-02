@@ -12,8 +12,9 @@ namespace Oper4sToolsAgain
 
 	public class Game()
 	{
-		public string name { get; set; }
-		public string filePath { get; set; }
+		public string gameID {  get; set; }
+		public string gameName { get; set; }
+		public string gameFilePath { get; set; }
 	}
 
 	internal class AppSettings
@@ -25,7 +26,6 @@ namespace Oper4sToolsAgain
 		private int timeInterval;
 		private string commandPromptGUIFilePath;
 		private static List<Game> gamesList;
-		Game game1 = new Game();
 		public AppSettings()
 		{
 			if(!File.Exists("appsettings.json")) firstRun();
@@ -36,7 +36,6 @@ namespace Oper4sToolsAgain
 			timeInterval = settingsJson["Settings"][0]["timeInterval"];
 			commandPromptGUIFilePath = settingsJson["Settings"][0]["commandPromptGUIFilePath"];
 			if (debugMode) flipDebugMode();
-			game1.name = "a";
 		}
 		public List<Game> getGameList() { return gamesList; }
 		private void readGameJSON()
@@ -50,21 +49,22 @@ namespace Oper4sToolsAgain
 			{
 				gamesList.Add(new Game()
 				{
-					name = settingsJson["Game" + i][0]["name"],
-					filePath = settingsJson["Game" + i][0]["filePath"]
+					gameID = settingsJson["Game" + i][0]["gameID"],
+					gameName = settingsJson["Game" + i][0]["gameName"],
+					gameFilePath = settingsJson["Game" + i][0]["gameFilePath"]
 				});
 			}
 		}
-
-		public void writeGameJSON()
+		public void writeGameJSON(List<Game> games)
 		{
 			JObject jsonObject = new JObject();
 			int i = 1;
-			foreach (Game game in gamesList)
+			foreach (Game game in games)
 			{
 				jsonObject["Game" + i] = JObject.FromObject(game);
 				i++;
 			}
+			gamesList = games;
 			string updatedJson = JsonConvert.SerializeObject(jsonObject, Formatting.Indented);
 			File.WriteAllText("gamedir.json", updatedJson);
 		}

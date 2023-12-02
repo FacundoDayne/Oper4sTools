@@ -16,8 +16,8 @@ namespace Oper4sToolsAgain.CommandPromptGUI
 			{
 				setCommandPromptGUIFilePath();
 			}
-			string processname = System.IO.Path.GetFileNameWithoutExtension(link);
-			isRunning= Process.GetProcessesByName(processname);
+			string processname = Path.GetFileNameWithoutExtension(link);
+			isRunning = Process.GetProcessesByName(processname);
 			if (isRunning.Length <= 0)
 			{
 				process = new Process();

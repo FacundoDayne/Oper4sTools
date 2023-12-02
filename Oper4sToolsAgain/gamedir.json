@@ -1,78 +1,25 @@
 {
   "Game1": [
     {
-      "name": "Game1",
-      "filePath": "B:\\Records\\Programming\\C#\\Console-Commands-GUI\\Timed2Shutdown\\bin\\Debug\\Timed2Shutdown.exe"
+      "gameID": "Game1",
+      "gameName": "Timed2Shutdown",
+      "gameFilePath": "B:\\Records\\Programming\\C#\\Console-Commands-GUI\\Timed2Shutdown\\bin\\Debug\\Timed2Shutdown.exe"
     }
   ],
   "Game2": [
     {
-      "name": "Game2",
-      "filePath": "B:\\Records\\Programming\\C#\\Oper4sToolsAgain\\Oper4sToolsAgain\\bin\\Debug\\net8.0-windows\\Oper4sToolsAgain.exe"
+      "gameID": "Game2",
+      "gameName": "Oper4sToolsAgain",
+      "gameFilePath": "B:\\Records\\Programming\\C#\\Oper4sToolsAgain\\Oper4sToolsAgain\\bin\\Debug\\net8.0-windows\\Oper4sToolsAgain.exe"
     }
   ],
   "Game3": [
     {
-      "name": "Game3",
-      "filePath": "B:\\Games\\Baldur's Gate 3\\Launcher.exe"
-    }
-  ],
-  "Game4": [
-    {
-      "name": "Game4",
-      "filePath": "B:\\Games\\CRYMACHINA\\machina.exe"
-    }
-  ],
-  "Game5": [
-    {
-      "name": "Game5",
-      "filePath": "B:\\Games\\Fate - Samurai Remnant\\FateSamuraiRemnant.exe"
-    }
-  ],
-  "Game6": [
-    {
-      "name": "Game6",
-      "filePath": "B:\\Games\\Honkai Impact 3 sea\\launcher.exe"
-    }
-  ],
-  "Game7": [
-    {
-      "name": "Game7",
-      "filePath": "B:\\Games\\Neptunia x SENRAN KAGURA\\GameData\\Neptunia x SENRAN KAGURA Ninja Wars.exe"
-    }
-  ],
-  "Game8": [
-    {
-      "name": "Game8",
-      "filePath": "B:\\Records\\Programming\\C#\\Console-Commands-GUI\\Timed2Shutdown\\bin\\Debug\\Timed2Shutdown.exe"
-    }
-  ],
-  "Game9": [
-    {
-      "name": "Game9",
-      "filePath": "B:\\Records\\Programming\\C#\\Oper4sToolsAgain\\Oper4sToolsAgain\\bin\\Debug\\net8.0-windows\\Oper4sToolsAgain.exe"
-    }
-  ],
-  "Game10": [
-    {
-      "name": "Game10",
-      "filePath": "B:\\Games\\Baldur's Gate 3\\Launcher.exe"
-    }
-  ],
-  "Game11": [
-    {
-      "name": "Game11",
-      "filePath": "B:\\Games\\CRYMACHINA\\machina.exe"
-    }
-  ],
-  "Game12": [
-    {
-      "name": "Game12",
-      "filePath": "B:\\Games\\Fate - Samurai Remnant\\FateSamuraiRemnant.exe"
+      "gameID": "Game3",
+      "gameName": "Baldur's Gate",
+      "gameFilePath": "B:\\Games\\Baldur's Gate 3\\Launcher.exe"
     }
   ]
-
-
 }
 
 
