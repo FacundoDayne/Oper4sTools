@@ -12,12 +12,6 @@ using static System.Windows.Forms.LinkLabel;
 namespace testSite
 {
 
-	public class Game()
-	{
-		public string name { get; set; }
-		public string filePath { get; set; }
-	}
-
 	internal class testSiteSnapshot2
 	{
 		static List<Game> gamesList;
@@ -39,8 +33,8 @@ namespace testSite
 			{
 				gamesList.Add(new Game()
 				{
-					name = settingsJson["Game" + i][0]["name"],
-					filePath = settingsJson["Game" + i][0]["filePath"]
+					//name = settingsJson["Game" + i][0]["name"],
+					//filePath = settingsJson["Game" + i][0]["filePath"]
 				});
 			}
 			return gamesList;
@@ -53,8 +47,8 @@ namespace testSite
 			int gameCount = jsonObject.Count + 1;
 			Game newGame = new Game()
 			{
-				name = "name" + (gameCount),
-				filePath = "?"
+				//name = "name" + (gameCount),
+				//filePath = "?"
 			};
 			string keyString = "Game" + (gameCount);
 			jsonObject[keyString] = JObject.FromObject(newGame);

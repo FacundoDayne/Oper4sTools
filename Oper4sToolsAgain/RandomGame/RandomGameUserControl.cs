@@ -18,7 +18,7 @@ namespace Oper4sToolsAgain.RandomGame
 			InitializeComponent();
 			games = Program.appSettings.getGameList();
 			tableControls = new List<PictureBox>();
-			prepareTable();
+			prepareTable(false);
 			gameSelected += RandomGameUserControl_gameSelected;
 			btnRandom.Click += getRandomGame;
 		}
@@ -41,10 +41,17 @@ namespace Oper4sToolsAgain.RandomGame
 			gameTime.Stop();
 			TimeSpan timeElapsed = TimeSpan.FromSeconds(gameTimed);
 			string formattedTime;
-			if (timeElapsed.TotalHours >= 1) formattedTime = timeElapsed.ToString(@"h\:mm\:ss");
-			else if (timeElapsed.TotalMinutes >= 1) formattedTime = timeElapsed.ToString(@"m\:ss");
-			else formattedTime = timeElapsed.ToString(@"s");
-			MessageBox.Show("You have been playing for: " + formattedTime, "Random Game by Oper4's Tools");
+			try
+			{
+				if (timeElapsed.TotalHours >= 1) formattedTime = timeElapsed.ToString(@"hh\:mm\:ss" + " hours");
+				else if (timeElapsed.TotalMinutes >= 1) formattedTime = timeElapsed.ToString(@"m\:ss" + " minutes");
+				else formattedTime = timeElapsed.ToString(@"ss") + " seconds";
+
+				MessageBox.Show("You have been playing for: " + formattedTime, "Random Game by Oper4's Tools");
+			}
+			catch (Exception s) { MessageBox.Show(s.Message + "\n" + gameTimed.ToString()); }
+		
+			
 		}
 
 		private void RandomGameUserControl_gameSelected(object? sender, EventArgs e)
@@ -53,7 +60,7 @@ namespace Oper4sToolsAgain.RandomGame
 		}
 		public void raiseGameSelected() { gameSelected(this, new EventArgs()); }
 
-		public void prepareTable()
+		public void prepareTable(bool updateGames)
 		{
 			tableControls.Clear();
 			int i = 1;
@@ -64,7 +71,7 @@ namespace Oper4sToolsAgain.RandomGame
 				tableControls.Add(new gamePicture(game));
 			}
 			tableControls.Add(new addNewGame());
-			Program.appSettings.writeGameJSON(games);
+			if (updateGames) Program.appSettings.writeGameJSON(games);
 			populateTable();
 		}
 
@@ -93,7 +100,7 @@ namespace Oper4sToolsAgain.RandomGame
 				games.Remove(selected.getGame());
 				selected = null;
 				gameNameLabel.Text = "";
-				prepareTable();
+				prepareTable(true);
 			}
 			catch (NullReferenceException nre) { Console.WriteLine("No game was selected"); }
 		}

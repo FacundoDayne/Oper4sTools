@@ -55,7 +55,7 @@ namespace Oper4sToolsAgain.RandomGame.Custom
 						gameFilePath = form.filePath
 					};
 					RandomGameUserControl.randomInstance.games.Add(game);
-					RandomGameUserControl.randomInstance.prepareTable();
+					RandomGameUserControl.randomInstance.prepareTable(true);
 				}
 			}
 		}

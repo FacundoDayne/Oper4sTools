@@ -30,7 +30,7 @@ namespace Oper4sToolsAgain
 		{
 			if(!File.Exists("appsettings.json")) firstRun();
 			baseJson = File.ReadAllText("appsettings.json");
-			if (File.Exists("gamedir.json")) readGameJSON();
+			if (File.Exists("gamedirectory.json")) readGameJSON();
 			else gamesList = new List<Game>();
 			settingsJson = JsonConvert.DeserializeObject(baseJson);
 			debugMode = settingsJson["Settings"][0]["debugMode"];
@@ -41,10 +41,10 @@ namespace Oper4sToolsAgain
 		public List<Game> getGameList() { return gamesList; }
 		private void readGameJSON()
 		{
-			string baseJson = File.ReadAllText("gamedir.json");
+			string baseJson = File.ReadAllText("gamedirectory.json");
 			dynamic settingsJson = JsonConvert.DeserializeObject(baseJson);
 			gamesList = new List<Game>();
-			JObject jsonObject = JObject.Parse(File.ReadAllText("gamedir.json"));
+			JObject jsonObject = JObject.Parse(File.ReadAllText("gamedirectory.json"));
 			int gameCount = jsonObject.Count;
 			for (int i = 1; i <= gameCount; i++)
 			{
@@ -58,16 +58,26 @@ namespace Oper4sToolsAgain
 		}
 		public void writeGameJSON(List<Game> games)
 		{
-			JObject jsonObject = new JObject();
+
+			Dictionary<string, List<Game>> gamesDictionary = new Dictionary<string, List<Game>>();
 			int i = 1;
 			foreach (Game game in games)
 			{
-				jsonObject["Game" + i] = JObject.FromObject(game);
+				List<Game> gameList = new List<Game>
+				{
+					new Game
+					{
+					gameID = "Game" + i,
+					gameName = game.gameName,
+					gameFilePath = game.gameFilePath
+					} 
+				};
+				gamesDictionary.Add("Game" + i, gameList);
 				i++;
 			}
 			gamesList = games;
-			string updatedJson = JsonConvert.SerializeObject(jsonObject, Formatting.Indented);
-			File.WriteAllText("gamedir.json", updatedJson);
+			string gameJson = JsonConvert.SerializeObject(gamesDictionary, Formatting.Indented);
+			File.WriteAllText("gamedirectory.json", gameJson);
 		}
 
 		private void firstRun()

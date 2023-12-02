@@ -11,6 +11,7 @@ namespace Oper4sToolsAgain
 		[STAThread]
 		static void Main()
 		{
+
 			appSettings = new AppSettings();
 			if (appSettings.isDebugMode()) { AllocConsole(); MessageBox.Show("Warning, Closing the console will exit the program"); }
 			ApplicationConfiguration.Initialize();
