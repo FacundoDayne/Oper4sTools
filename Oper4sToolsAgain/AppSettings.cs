@@ -19,7 +19,7 @@ namespace Oper4sToolsAgain
 
 	internal class AppSettings
 	{
-		private string baseJson = File.ReadAllText("appsettings.json");
+		private string baseJson;
 		private string defaultSettings = "[{ \"debugMode\": false, \"timeInterval\": 30, \"commandPromptGUIFilePath\": \"defaultFilePath\"}]";
 		private dynamic settingsJson;
 		private bool debugMode;
@@ -29,6 +29,7 @@ namespace Oper4sToolsAgain
 		public AppSettings()
 		{
 			if(!File.Exists("appsettings.json")) firstRun();
+			baseJson = File.ReadAllText("appsettings.json");
 			if (File.Exists("gamedir.json")) readGameJSON();
 			else gamesList = new List<Game>();
 			settingsJson = JsonConvert.DeserializeObject(baseJson);
